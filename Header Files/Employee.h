@@ -16,8 +16,24 @@ public:
 	Employee();
 	~Employee();
 
-	char * setName(const char* rName);
-	void getName();
+	//im unsure about the input and output arguments
+	void setName(char* rName);
+	char* getName();
+
+	void setAge(int rAge);
+	int getAge();
+
+	void setSalary(double rSalary);
+	double getSalary();
+
+	void Join(Department* a);
+	void Leave(Department* a);
+
+	void ReadData();
+
+	void PrintInfo();
+
+
 
 
 

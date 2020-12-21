@@ -24,14 +24,17 @@ void Department::setCode(int a)
 
 void Department::setName(char * a)
 {
-	int len = strlen(a) + 1;
+//HOW TO SET A CHAR OF MAX CHARACTERS 100???
+
+	/*int len = strlen(a) + 1;
 	name = new char[len];
-	strcpy_s(name, len, a);
+	strcpy(name, len, a);*/
 
 }
 
-char Department::getName() const
+char * Department::getName() const
 {
+//HOW TO RETURN THE CHAR??
 	return name;
 }
 
