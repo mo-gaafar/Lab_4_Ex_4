@@ -3,9 +3,9 @@
 
 class Department
 {
-private: 
+private:
 	int code;
-	char name[100];
+	char* name [100];
 public:
 	Department();
 	~Department();
@@ -14,12 +14,14 @@ public:
 	int getCode() const;
 	void setCode(int a);
 
-	int getName() const;
-	void setName();
+	char getName() const;
+	void setName(char* a);
 
-	int ReadData(int c, int n); //Reads and sets dept data from user
+	void ReadData(); //Reads and sets dept data from user
 
 	void PrintInfo(); //prints all info
 
 
 };
+
+#endif
