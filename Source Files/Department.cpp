@@ -25,29 +25,28 @@ void Department::setCode(int a)
 void Department::setName(char * a)
 {
 //HOW TO SET A CHAR OF MAX CHARACTERS 100???
-
-	/*int len = strlen(a) + 1;
+	if (name != NULL)
+		delete[] name;
+	int len = strlen(a) + 1;
 	name = new char[len];
-	strcpy(name, len, a);*/
-
+	strcpy_s(name, len, a);
 }
 
 char * Department::getName() const
 {
-//HOW TO RETURN THE CHAR??
 	return name;
 }
 
 void Department::ReadData()
 {
-	char inputName;
+	char * inputName;
 	int inputCode;
 	cout << "Please enter department Name" << endl;
-	cin >> inputName;
+	cin >> inputName; //how to input char
 	cout << endl << "Please enter department code" << endl;
 	cin >> inputCode;
 
-	name = inputName;
+	*name = *inputName;
 	code = inputCode;
 }
 

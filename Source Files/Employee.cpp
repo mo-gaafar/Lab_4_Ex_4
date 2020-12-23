@@ -12,11 +12,15 @@ Employee::~Employee()
 }
 void Employee::setName(char* rName)
 {
-
+	if (name != NULL)
+		delete[] name;
+	int len = strlen(rName) + 1;
+	name = new char[len];
+	strcpy_s(name, len, rName);
 }
 char * Employee::getName()
 {
-	return name; //How to return the name ????
+	return name;
 }
 
 void Employee::setAge(int rAge)
@@ -39,13 +43,14 @@ double Employee::getSalary()
 	return salary;
 }
 
-void Employee::Leave(Department* a)
+void Employee::Leave(Department& a)
 {
 	//How to make an employee leave a department hes associated with?
 }
 
-void Employee::Join(Department* a)
+void Employee::Join(Department& a)
 {
+	Dep = &a;
 	//How to change the department associated with the employee?
 }
 
@@ -63,7 +68,7 @@ void Employee::ReadData()
 	cout << endl << "Please enter employee Salary";
 	cin >> rSalary;
 
-	name = rName;
+	*name = rName;
 	salary = rSalary;
 	age = rAge;
 }
@@ -71,7 +76,7 @@ void Employee::ReadData()
 void Employee::PrintInfo()
 {
 	cout << endl << " Employee Name: " << name << endl;
-	cout << "Department: " << Dep << endl; // pointer to department???
+	cout << "Department: " << Dep << endl; 
 	cout << "Age: " << age << endl;
 	cout << "Salary: " << salary << endl;
 }

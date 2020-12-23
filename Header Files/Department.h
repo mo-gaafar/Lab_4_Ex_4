@@ -5,7 +5,7 @@ class Department
 {
 private:
 	int code;
-	char* name [100];
+	char* name;
 public:
 	Department();
 	~Department();
@@ -14,7 +14,7 @@ public:
 	int getCode() const;
 	void setCode(int a);
 
-	char getName() const;
+	char* getName() const;
 	void setName(char* a);
 
 	void ReadData(); //Reads and sets dept data from user

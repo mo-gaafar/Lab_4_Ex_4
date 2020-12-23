@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Employee.h"
+#include "Department.h"
 using namespace std;
 
 /*Write a main function and do the following:
@@ -20,7 +22,30 @@ What is the order of creation and deletion of the classes in this exercise?*/
 
 void main()
 {
+	Employee E1;
+	E1.ReadData();
+	Employee E2;
+	E2.ReadData();
+	Employee E3;
+	E3.ReadData();
+
+	Department D1;
+	D1.ReadData();
+	Department D2;
+	D2.ReadData();
+
+	E1.Join(D1);
+	E2.Join(D2);
+	E3.Join(D1);
+
+	E1.PrintInfo();
+	E2.PrintInfo();
+	E3.PrintInfo();
 	
-	
+	D1.getCode();
+	D2.getCode();
+
+	E1.Leave(D1);
+
 	return;
 }

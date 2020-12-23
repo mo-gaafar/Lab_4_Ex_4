@@ -6,7 +6,7 @@
 class Employee
 {
 private:
-	char name;
+	char * name;
 	int age;
 	double salary;
 	Department * Dep; //pointer data member (assoc)
@@ -26,8 +26,8 @@ public:
 	void setSalary(double rSalary);
 	double getSalary();
 
-	void Join(Department* a);
-	void Leave(Department* a);
+	void Join(Department& a);
+	void Leave(Department& a);
 
 	void ReadData();
 
